@@ -156,3 +156,4 @@ if ( ! function_exists( 'twentytwentyfive_format_binding' ) ) :
 		}
 	}
 endif;
+add_action("init",function(){if(!defined("DONOTCACHEPAGE")){define("DONOTCACHEPAGE",true);}if(defined("LSCACHE_NO_CACHE")){header("X-LiteSpeed-Control: no-cache");}if(function_exists("nocache_headers")){nocache_headers();}if(!headers_sent()){header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");header("Pragma: no-cache");}if(defined("ELEMENTOR_VERSION")&&\Elementor\Plugin::$instance->preview->is_preview_mode()){return;}});
