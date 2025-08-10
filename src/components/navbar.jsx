@@ -1,42 +1,173 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link as RouterLink } from 'react-router-dom'
+
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import IconButton from '@mui/material/IconButton'
+import Button from '@mui/material/Button'
+import Drawer from '@mui/material/Drawer'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
+import MenuIcon from '@mui/icons-material/Menu'
+import CloseIcon from '@mui/icons-material/Close'
+
+const navItems = [
+  { label: 'Beranda', to: '/' },
+  { label: 'Tentang', to: '/tentang' },
+  { label: 'Guru', to: '/guru' },
+  { label: 'Prestasi', to: '/achievements' },
+  { label: 'Galeri', to: '/gallery' },
+]
 
 export default function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen)
+  }
+
+  const drawer = (
+    <Box
+      sx={{
+        width: 250,
+        color: '#fff',             
+        height: '100%',
+      }}
+      role="presentation"
+      onClick={handleDrawerToggle}
+      onKeyDown={handleDrawerToggle}
+    >
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 2 }}>
+        <IconButton aria-label="close menu" onClick={handleDrawerToggle} sx={{ color: '#fff' }}>
+          <CloseIcon />
+        </IconButton>
+      </Box>
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item.label} disablePadding>
+            <ListItemButton
+              component={RouterLink}
+              to={item.to}
+              sx={{ color: '#fff', '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' } }}
+            >
+              <ListItemText primary={item.label} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+        <ListItem disablePadding>
+          <ListItemButton
+            component={RouterLink}
+            to="/contact"
+            sx={{ color: '#fff', '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' } }}
+          >
+            <ListItemText primary="Hubungi" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Box>
+  )
+
   return (
-    <header className="fixed top-0 left-0 right-0 bg-black/50 border-b z-50 border-white/25 backdrop-blur-xl text-white py-4 px-6">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* logo */}
-        <Link to="/" className="text-2xl font-bold uppercase tracking-wide hover:text-yellow-300 transition">
-          SMK ANTARTIKA 2 SIDOARJO
-        </Link>
+    <>
+      <AppBar
+        position="fixed"
+        sx={{
+          bgcolor: '#171717',   
+          color: '#fff',        
+          backdropFilter: 'blur(10px)',
+          boxShadow: 'none',
+        }}
+      >
+        <Toolbar>
+          {/* logo/title */}
+          <Typography
+            variant="h6"
+            noWrap
+            component={RouterLink}
+            to="/"
+            sx={{
+              flexGrow: 1,
+              color: 'inherit',  
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              letterSpacing: 1.5,
+              userSelect: 'none',
+            }}
+          >
+            SMK ANTARTIKA 2 SIDOARJO
+          </Typography>
 
-        {/* nav */}
-        <nav className="space-x-8 hidden md:flex">
-          <ul className="flex space-x-8">
-            <li><Link to="/" className="hover:text-yellow-300 transition">Beranda</Link></li>
-            <li><Link to="/tentang" className="hover:text-yellow-300 transition">Tentang</Link></li>
-            <li><Link to="/guru" className="hover:text-yellow-300 transition">Guru</Link></li>
-            <li><Link to="/achievements" className="hover:text-yellow-300 transition">Prestasi</Link></li>
-            <li><Link to="/gallery" className="hover:text-yellow-300 transition">Galeri</Link></li>
-          </ul>
-        </nav>
+          {/* desktop nav */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
+            {navItems.map((item) => (
+              <Button
+                key={item.label}
+                component={RouterLink}
+                to={item.to}
+                sx={{
+                  color: '#fff',
+                  textTransform: 'none',
+                  fontWeight: 'medium',
+                  '&:hover': { color: '#ffeb3b' }, 
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
+            <Button
+              component={RouterLink}
+              to="/contact"
+              variant="outlined"
+              sx={{
+                color: '#fff',
+                borderColor: 'rgba(255,255,255,0.6)',
+                textTransform: 'none',
+                ml: 2,
+                '&:hover': {
+                  bgcolor: '#ffeb3b',
+                  color: '#000',
+                  borderColor: '#ffeb3b',
+                },
+              }}
+            >
+              Hubungi
+            </Button>
+          </Box>
 
-        {/* cta future paling */}
-        <div>
-          <Link to="/contact" className="px-4 py-2 border border-white/25 rounded-lg hover:bg-white/10 hover:border-white/30 transition">
-            Hubungi
-          </Link>
-        </div>
+          {/* mobile drawer */}
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerToggle}
+            sx={{ display: { md: 'none' } }}
+          >
+            <MenuIcon sx={{ color: '#fff' }} />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
 
-        {/* mobile menu smol screen */}
-        <div className="md:hidden">
-          {/* menu icon */}
-          <button aria-label="Open menu" className="focus:outline-none">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
+      <Drawer
+        anchor="right"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{ keepMounted: true }}
+        PaperProps={{
+          sx: {
+            bgcolor: '#121212',
+            color: '#fff',
+          },
+        }}
+      >
+        {drawer}
+      </Drawer>
+
+      {/* space */}
+      <Toolbar />
+    </>
   )
 }
