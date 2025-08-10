@@ -1,8 +1,22 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // disable scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    // cleam function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [menuOpen]);
 
   return (
     <>
@@ -13,7 +27,7 @@ export default function Header() {
           onClick={() => setMenuOpen(false)}
         />
       )}
-      
+
       <header className="fixed top-0 left-0 right-0 bg-black/80 border-b border-white/25 text-white z-50 backdrop-blur-lg">
         <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
           {/* Logo */}
