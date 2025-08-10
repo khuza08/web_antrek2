@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SectionTitle from './sectionTitle';
 import achievement1 from '../assets/images/achievement.jpg';
 import achievement2 from '../assets/images/achievement.jpg';
 import achievement3 from '../assets/images/achievement.jpg';
@@ -63,7 +64,7 @@ export default function CardPrestasi() {
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-2">
             <span className={`px-2 py-1 text-xs font-semibold rounded-full ${achievement.category === 'Academic' ? 'bg-blue-100 text-blue-800' :
-                'bg-green-100 text-green-800'
+              'bg-green-100 text-green-800'
               }`}>
               {achievement.category}
             </span>
@@ -110,7 +111,9 @@ export default function CardPrestasi() {
     <section className="py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-white mb-2">Prestasi Terbaru</h2>
+          <SectionTitle >
+            Prestasi Terbaru
+          </SectionTitle>          
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
             Berbagai penghargaan dan prestasi yang telah diraih oleh siswa-siswi kami
           </p>

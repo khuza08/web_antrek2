@@ -1,14 +1,15 @@
 import Hero from '../components/hero'
-import SectionTitle from '../components/sectionTitle'
+import Prestasi from '../components/cardPrestasi'
+import Slogan from '../components/sloganSekolah'
+import ToggleTheme from '../components/toggleTheme';
 
 export default function Home() {
   return (
-    <div className="p-6">
+    <div>
       <Hero />
-      <section>
-        <SectionTitle>Berita Terbaru</SectionTitle>
-        <p>Ini adalah contoh berita terbaru dari sekolah kami.</p>
-      </section>
+      <Slogan />
+      <Prestasi />
+      <ToggleTheme />
     </div>
   )
 }
