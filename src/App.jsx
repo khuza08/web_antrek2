@@ -1,0 +1,33 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import Layout from './layouts/layout'
+import Home from './pages/home'
+import Tentang from './pages/tentang'
+import Guru from './pages/guru'
+import Achievements from './pages/achievements'
+import Gallery from './pages/gallery'
+import Contact from './pages/contact'
+import News from './pages/news'
+import Ppdb from './pages/ppdb'
+import NotFound from './pages/404'
+import "../src/styles/index.css"
+
+export default function App() {
+  return (
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tentang" element={<Tentang />} />
+          <Route path="/guru" element={<Guru />} />
+          <Route path="/achievements" element={<Achievements />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/ppdb" element={<Ppdb />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </Router>
+  )
+}
