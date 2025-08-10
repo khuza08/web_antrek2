@@ -1,173 +1,127 @@
 import { useState } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
-
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
-import Button from '@mui/material/Button'
-import Drawer from '@mui/material/Drawer'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemText from '@mui/material/ListItemText'
-import MenuIcon from '@mui/icons-material/Menu'
-import CloseIcon from '@mui/icons-material/Close'
-
-const navItems = [
-  { label: 'Beranda', to: '/' },
-  { label: 'Tentang', to: '/tentang' },
-  { label: 'Guru', to: '/guru' },
-  { label: 'Prestasi', to: '/achievements' },
-  { label: 'Galeri', to: '/gallery' },
-]
+import { Link } from 'react-router-dom'
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
-  }
-
-  const drawer = (
-    <Box
-      sx={{
-        width: 250,
-        color: '#fff',             
-        height: '100%',
-      }}
-      role="presentation"
-      onClick={handleDrawerToggle}
-      onKeyDown={handleDrawerToggle}
-    >
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 2 }}>
-        <IconButton aria-label="close menu" onClick={handleDrawerToggle} sx={{ color: '#fff' }}>
-          <CloseIcon />
-        </IconButton>
-      </Box>
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item.label} disablePadding>
-            <ListItemButton
-              component={RouterLink}
-              to={item.to}
-              sx={{ color: '#fff', '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' } }}
-            >
-              <ListItemText primary={item.label} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-        <ListItem disablePadding>
-          <ListItemButton
-            component={RouterLink}
-            to="/contact"
-            sx={{ color: '#fff', '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' } }}
-          >
-            <ListItemText primary="Hubungi" />
-          </ListItemButton>
-        </ListItem>
-      </List>
-    </Box>
-  )
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <>
-      <AppBar
-        position="fixed"
-        sx={{
-          bgcolor: '#171717',   
-          color: '#fff',        
-          backdropFilter: 'blur(10px)',
-          boxShadow: 'none',
-        }}
-      >
-        <Toolbar>
-          {/* logo/title */}
-          <Typography
-            variant="h6"
-            noWrap
-            component={RouterLink}
+      {/* dim */}
+      {menuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-lg z-40 md:hidden"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+      
+      <header className="fixed top-0 left-0 right-0 bg-black/80 border-b border-white/25 text-white z-50 backdrop-blur-lg">
+        <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+          {/* Logo */}
+          <Link
             to="/"
-            sx={{
-              flexGrow: 1,
-              color: 'inherit',  
-              textDecoration: 'none',
-              fontWeight: 'bold',
-              letterSpacing: 1.5,
-              userSelect: 'none',
-            }}
+            className="text-xl md:text-2xl font-bold uppercase tracking-wide hover:text-yellow-300 transition"
           >
             SMK ANTARTIKA 2 SIDOARJO
-          </Typography>
+          </Link>
+
+          {/* mobile menu btn */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-white focus:outline-none"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {menuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
 
           {/* desktop nav */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
-            {navItems.map((item) => (
-              <Button
-                key={item.label}
-                component={RouterLink}
-                to={item.to}
-                sx={{
-                  color: '#fff',
-                  textTransform: 'none',
-                  fontWeight: 'medium',
-                  '&:hover': { color: '#ffeb3b' }, 
-                }}
-              >
-                {item.label}
-              </Button>
-            ))}
-            <Button
-              component={RouterLink}
+          <nav className="hidden md:flex space-x-8 items-center">
+            <Link to="/" className="hover:text-yellow-300 transition">Beranda</Link>
+            <Link to="/tentang" className="hover:text-yellow-300 transition">Tentang</Link>
+            <Link to="/guru" className="hover:text-yellow-300 transition">Guru</Link>
+            <Link to="/achievements" className="hover:text-yellow-300 transition">Prestasi</Link>
+            <Link to="/gallery" className="hover:text-yellow-300 transition">Galeri</Link>
+            <Link
               to="/contact"
-              variant="outlined"
-              sx={{
-                color: '#fff',
-                borderColor: 'rgba(255,255,255,0.6)',
-                textTransform: 'none',
-                ml: 2,
-                '&:hover': {
-                  bgcolor: '#ffeb3b',
-                  color: '#000',
-                  borderColor: '#ffeb3b',
-                },
-              }}
+              className="px-4 py-2 border border-white/25 rounded-lg hover:bg-white/10 hover:border-white/30 transition"
             >
               Hubungi
-            </Button>
-          </Box>
+            </Link>
+          </nav>
+        </div>
 
-          {/* mobile drawer */}
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerToggle}
-            sx={{ display: { md: 'none' } }}
-          >
-            <MenuIcon sx={{ color: '#fff' }} />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-
-      <Drawer
-        anchor="right"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{ keepMounted: true }}
-        PaperProps={{
-          sx: {
-            bgcolor: '#121212',
-            color: '#fff',
-          },
-        }}
-      >
-        {drawer}
-      </Drawer>
-
-      {/* space */}
-      <Toolbar />
+        {/* mobile menu */}
+        <div
+          className={`md:hidden ${menuOpen ? 'block' : 'hidden'} bg-black/90 backdrop-blur-lg pb-4 relative z-50`}
+        >
+          <div className="flex flex-col space-y-4 px-6 py-2">
+            <Link 
+              to="/" 
+              className="hover:text-yellow-300 transition py-2 border-b border-white/30"
+              onClick={() => setMenuOpen(false)}
+            >
+              Beranda
+            </Link>
+            <Link 
+              to="/tentang" 
+              className="hover:text-yellow-300 transition py-2 border-b border-white/30"
+              onClick={() => setMenuOpen(false)}
+            >
+              Tentang
+            </Link>
+            <Link 
+              to="/guru" 
+              className="hover:text-yellow-300 transition py-2 border-b border-white/30"
+              onClick={() => setMenuOpen(false)}
+            >
+              Guru
+            </Link>
+            <Link 
+              to="/achievements" 
+              className="hover:text-yellow-300 transition py-2 border-b border-white/30"
+              onClick={() => setMenuOpen(false)}
+            >
+              Prestasi
+            </Link>
+            <Link 
+              to="/gallery" 
+              className="hover:text-yellow-300 transition py-2 border-b border-white/30"
+              onClick={() => setMenuOpen(false)}
+            >
+              Galeri
+            </Link>
+            <Link
+              to="/contact"
+              className="px-4 py-2 border border-white/25 rounded-lg hover:bg-white/30 hover:border-white/30 transition text-center mt-2"
+              onClick={() => setMenuOpen(false)}
+            >
+              Hubungi
+            </Link>
+          </div>
+        </div>
+      </header>
     </>
   )
 }
