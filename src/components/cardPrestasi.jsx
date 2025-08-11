@@ -10,10 +10,10 @@ export default function CardPrestasi() {
     {
       id: "1",
       image: achievement1,
-      title: "Juara 1 Robotik Nasional",
-      description: "Memenangkan kompetisi robotik tingkat nasional dengan inovasi terbaik",
-      category: "Academic",
-      date: "15 Mar 2023",
+      title: "Juara 1 Herex Nasional",
+      description: "Memenangkan kompetisi Herex 1200m tingkat nasional terbaik",
+      category: "Competition",
+      date: "05 Mar 2008",
       rank: "1st Place",
       rating: "4.9"
     },
@@ -58,14 +58,19 @@ export default function CardPrestasi() {
 
       <div className="p-5 relative overflow-hidden">
         {/* radia gradiente*/}
-        <div className="absolute -right-20 -bottom-30 w-48 h-48 bg-gradient-to-tr from-red-500/30 rounded-full blur-xl -z-10"></div>
+        <div className="absolute -right-20 -bottom-30 w-48 h-48 bg-gradient-to-tr from-blue-500/40 to-blue-300/10 rounded-full blur-xl"></div>
 
         {/* konten card */}
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-2">
-            <span className={`px-2 py-1 text-xs font-semibold rounded-full ${achievement.category === 'Academic' ? 'bg-blue-100 text-blue-800' :
-              'bg-green-100 text-green-800'
-              }`}>
+            <span className={`px-2 py-1 text-xs font-semibold rounded-full 
+  ${achievement.category === 'Academic'
+                ? 'bg-yellow-800 text-yellow-100'
+                : achievement.category === 'Competition'
+                  ? 'bg-red-800 text-red-100'
+                  : 'bg-green-800 text-green-100'
+              }
+`}>
               {achievement.category}
             </span>
             <span className="text-xs text-gray-500 dark:text-gray-400">
@@ -73,7 +78,7 @@ export default function CardPrestasi() {
             </span>
           </div>
 
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2" >
             {achievement.title}
           </h3>
 
@@ -93,7 +98,7 @@ export default function CardPrestasi() {
 
             <Link
               to={`/prestasi/${achievement.id}`}
-              className="text-sm font-medium text-red-400 hover:text-red-500/50 transition-colors flex items-center"
+              className="text-sm font-medium text-blue-400 hover:text-blue-500 transition-colors flex items-center"
             >
               Lihat Detail
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,38 +113,37 @@ export default function CardPrestasi() {
 
   // render 3 card + layout
   return (
-    <section className="py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <SectionTitle >
-            Prestasi Terbaru
-          </SectionTitle>          
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Berbagai penghargaan dan prestasi yang telah diraih oleh siswa-siswi kami
-          </p>
-        </div>
-
-        {/* grid 3 card */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {achievements.map((achievement) => (
-            <div key={achievement.id} className="flex justify-center">
-              <AchievementCard achievement={achievement} />
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-8">
-          <Link
-            to="/prestasi"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-red-500 hover:bg-red-500/60 hover:-translate-y-0.5 transition duration-300"
-          >
-            Lihat Semua Prestasi
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
+    <section className="min-h-screen py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-8">
+        <SectionTitle >
+          Prestasi Terbaru
+        </SectionTitle>
+        <p className="text-lg text-black/60 dark:text-white max-w-2xl mx-auto">
+          Berbagai penghargaan dan prestasi yang telah diraih oleh siswa-siswi kami
+        </p>
       </div>
+
+      {/* grid 3 card */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {achievements.map((achievement) => (
+          <div key={achievement.id} className="flex justify-center">
+            <AchievementCard achievement={achievement} />
+          </div>
+        ))}
+      </div>
+
+      <div className="text-center mt-8">
+        <Link
+          to="/prestasi"
+          className="bg-blue-600 dark:bg-blue-500 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white hover:bg-blue-600 hover:-translate-y-0.5 transition duration-300"
+        >
+          Lihat Semua Prestasi
+          <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </div>
+    </div>
     </section>
   );
 }
