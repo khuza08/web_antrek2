@@ -23,13 +23,14 @@ export default function Hero() {
 
         {/* btn */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full sm:w-auto">
-          <button className="bg-red-400 text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-red-500 transition text-sm sm:text-base w-full sm:w-auto">
-            Tentang guwe 
+          <button className="bg-blue-600 dark:bg-blue-500 text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition text-sm sm:text-base w-full sm:w-auto">
+            Tentang Kami
           </button>
-          <button className="bg-transparent backdrop-blur-lg border border-red-400 text-red-400 font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-red-400/50 hover:text-white transition text-sm sm:text-base w-full sm:w-auto">
+          <button className="bg-transparent backdrop-blur-lg border border-blue-400 text-blue-400 font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-blue-500/50 hover:text-white transition text-sm sm:text-base w-full sm:w-auto">
             Kontak Kami
           </button>
         </div>
+
       </div>
     </section>
   )
