@@ -113,7 +113,8 @@ export default function CardPrestasi() {
 
   // render 3 card + layout
   return (
-    <section className="min-h-screen py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen py-16 bg-blue-100 dark:bg-gray-800 flex items-center justify-center">      
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-8">
         <SectionTitle >
           Prestasi <span className='italic text-blue-400' style={{ fontFamily: "'Instrument Serif', serif" }}>Terbaru</span>
