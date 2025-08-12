@@ -65,8 +65,8 @@ export default function GuruSlider() {
           {/* Kolom Kiri */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Temukan <span className="text-blue-400">Guru Terbaik</span> untuk Kesuksesan Anda
+              <h2 className="text-4xl lg:text-5xl font-semibold text-white leading-tight">
+                Temukan <span className="text-blue-400 italic" style={{ fontFamily: "'Instrument Serif', serif" }}>Guru Terbaik</span> untuk Kesuksesan Anda
               </h2>
               <p className="text-slate-300 text-lg leading-relaxed">
                 Bergabunglah dengan ribuan siswa yang telah merasakan pengalaman belajar luar biasa
@@ -78,7 +78,7 @@ export default function GuruSlider() {
               {[
                 "Guru bersertifikat dan berpengalaman",
                 "Pembelajaran yang disesuaikan dengan kebutuhan",
-                "Jadwal fleksibel dan harga terjangkau"
+                "Jadwal fleksibel dan anti suki"
               ].map((text, i) => (
                 <div key={i} className="flex items-center space-x-3">
                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
@@ -92,7 +92,7 @@ export default function GuruSlider() {
             </div>
 
             <div className="pt-4">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 shadow-lg">
                 Mulai Belajar Sekarang
               </button>
             </div>
