@@ -59,7 +59,7 @@ export default function GuruSlider() {
   ];
 
   return (
-    <div className="bg-slate-900 py-16 px-4">
+<div className="bg-gradient-to-b from-gray-800 to-slate-900 py-16 px-4">
       <div className="px-12 mx-auto">
         <div className="grid lg:grid-cols-2 gap-4 items-center">
           {/* Kolom Kiri */}
@@ -100,28 +100,30 @@ export default function GuruSlider() {
 
           {/* Kolom Kanan - Slider */}
           <div className="relative">
-            <div className="absolute left-0 top-0 w-30 h-full bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 w-30 h-full bg-gradient-to-l from-slate-900 via-slate-900/40 to-transparent z-10 pointer-events-none"></div>
+  <div className="overflow-hidden">
+    <div className="mask-gradient">
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={20}
+        slidesPerView={1.5}
+        slidesOffsetBefore={112}
+        className="pb-12"
+        breakpoints={{
+          640: { slidesPerView: 1.5, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 30 },
+          1024: { slidesPerView: 1.5, spaceBetween: 20 },
+        }}
+      >
+        {guruData.map((guru) => (
+          <SwiperSlide key={guru.id} className="w-full max-w-xs">
+            <CardGuru guru={guru} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  </div>
+</div>
 
-            <Swiper
-              modules={[Navigation, Pagination]}
-              spaceBetween={20}
-              slidesPerView={1.5}
-              slidesOffsetBefore={112}
-              className="pb-12"
-              breakpoints={{
-                640: { slidesPerView: 1.5, spaceBetween: 20 },
-                768: { slidesPerView: 2, spaceBetween: 30 },
-                1024: { slidesPerView: 1.5, spaceBetween: 20 },
-              }}
-            >
-              {guruData.map((guru) => (
-                <SwiperSlide key={guru.id} className="w-full max-w-xs">
-                  <CardGuru guru={guru} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
         </div>
       </div>
     </div>
