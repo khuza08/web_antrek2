@@ -27,7 +27,7 @@ export default function SloganSekolah() {
         {/* Value Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           {/* Pillar 1 */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-white/5 border-2 border-white/15 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
             <div className="text-blue-600 dark:text-blue-400 text-4xl mb-4">
               <FaGraduationCap />
             </div>
@@ -43,7 +43,7 @@ export default function SloganSekolah() {
           </div>
 
           {/* Pillar 2 */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-white/5 p-8 border-2 border-white/15 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
             <div className="text-blue-600 dark:text-blue-400 text-4xl mb-4">
               <FaBookOpen />
             </div>
@@ -59,7 +59,7 @@ export default function SloganSekolah() {
           </div>
 
           {/* Pillar 3 */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-white/5 p-8 border-2 border-white/15 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
             <div className="text-blue-600 dark:text-blue-400 text-4xl mb-4">
               <FaUsers />
             </div>
