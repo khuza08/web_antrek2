@@ -19,7 +19,7 @@ function CardGuru({ guru }) {
 }
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -28,9 +28,9 @@ export default function GuruSlider() {
   const guruData = [
     {
       id: 2,
-      nama: "Prof. Ahmad Rahman",
-      jabatan: "Guru Fisika",
-      photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=400&fit=crop"
+      nama: "Jendral Huza",
+      jabatan: "Guru Jumpshot Perang Dunia II",
+      photo: "https://cdn5.telesco.pe/file/KtptrPSlh8zqk5VJhLldi2w9EILkZrwaGq0J9MIDbWLq0PoiZIRWHTKehNe7MwqwyzHB8Hj7vurFMNHDbHB_Tbq0t-JABIjSIp2zxC73rmuciGpR8WUeHIUUALrgRlkLWPqinDH36mU4fcGohQnxctdsTNnNC8IKNkUDGcQxi2_M1ejF6p-Nf31RhPqiECYfkCSiQZhI4Kk-BDoFPXVoFoUaFrEqux1IXzbCz3xAyRuXjCqhh7_Jfj9PC1kvTF-HjNqyaMGHQuyjYOcqCmpUR_v-bgdqjDchEe8niPB2He1Jufkoa2ogxMSfR7o854CQXBQMUawxu0BORZDRIk6pLw.jpg"
     },
     {
       id: 3,
@@ -59,7 +59,7 @@ export default function GuruSlider() {
   ];
 
   return (
-<div className="bg-gradient-to-b from-gray-800 to-slate-900 py-16 px-4">
+    <div className="bg-gradient-to-b from-gray-800 to-slate-900 py-16 px-4">
       <div className="px-12 mx-auto">
         <div className="grid lg:grid-cols-2 gap-4 items-center">
           {/* Kolom Kiri */}
@@ -100,29 +100,34 @@ export default function GuruSlider() {
 
           {/* Kolom Kanan - Slider */}
           <div className="relative">
-  <div className="overflow-hidden">
-    <div className="mask-gradient">
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={20}
-        slidesPerView={1.5}
-        slidesOffsetBefore={112}
-        className="pb-12"
-        breakpoints={{
-          640: { slidesPerView: 1.5, spaceBetween: 20 },
-          768: { slidesPerView: 2, spaceBetween: 30 },
-          1024: { slidesPerView: 1.5, spaceBetween: 20 },
-        }}
-      >
-        {guruData.map((guru) => (
-          <SwiperSlide key={guru.id} className="w-full max-w-xs">
-            <CardGuru guru={guru} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  </div>
-</div>
+            <div className="overflow-hidden">
+              <div className="mask-gradient">
+                <Swiper
+                  modules={[Navigation, Pagination, Mousewheel]}
+                  spaceBetween={20}
+                  slidesPerView={1.5}
+                  slidesOffsetBefore={112}
+                  mousewheel={{ forceToAxis: true }}
+                  grabCursor={true}        
+                  simulateTouch={true}      
+                  touchStartPreventDefault={false} 
+                  className="pb-12"
+                  breakpoints={{
+                    640: { slidesPerView: 1.5, spaceBetween: 20 },
+                    768: { slidesPerView: 2, spaceBetween: 30 },
+                    1024: { slidesPerView: 1.5, spaceBetween: 20 },
+                  }}
+                >
+                  {guruData.map((guru) => (
+                    <SwiperSlide key={guru.id} className="w-full max-w-xs">
+                      <CardGuru guru={guru} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
