@@ -18,7 +18,7 @@ export default function Hero() {
 
         {/* h1 */}
         <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white font-inter leading-snug sm:leading-tight md:leading-none tracking-tight">
-          Meet New <span className='italic font-extralight' style={{ fontFamily: "'Instrument Serif', serif" }}>Friends</span> and <br className="hidden sm:block" />Learn from Experts.
+          Meet New <span className='italic font-extralight text-blue-600 dark:text-blue-400' style={{ fontFamily: "'Instrument Serif', serif" }}>Friends</span> and <br className="hidden sm:block" />Learn from Experts.
         </h1>
 
         {/* btn */}

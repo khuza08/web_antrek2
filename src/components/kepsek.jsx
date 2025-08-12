@@ -18,7 +18,7 @@ export default function Kepsek() {
           <h2 className="text-xl md:text-2xl text-gray-800 dark:text-gray-100 font-semibold">
             Meet the{' '}
             <span
-              className="text-blue-400 italic"
+              className="text-blue-600 dark:text-blue-400 italic"
               style={{ fontFamily: "'Instrument Serif', serif" }}
             >
               Principal

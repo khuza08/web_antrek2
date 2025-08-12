@@ -117,7 +117,7 @@ export default function CardPrestasi() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-8">
         <SectionTitle >
-          Prestasi <span className='italic text-blue-400' style={{ fontFamily: "'Instrument Serif', serif" }}>Terbaru</span>
+          Prestasi <span className='italic text-blue-600 dark:text-blue-400' style={{ fontFamily: "'Instrument Serif', serif" }}>Terbaru</span>
         </SectionTitle>
         <p className="text-lg text-black/60 dark:text-white max-w-2xl mx-auto">
           Berbagai penghargaan dan prestasi yang telah diraih oleh siswa-siswi kami
