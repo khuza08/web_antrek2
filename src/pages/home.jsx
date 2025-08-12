@@ -4,6 +4,7 @@ import Slogan from '../components/sloganSekolah'
 import ToggleTheme from '../components/toggleTheme';
 import Kepsek from '../components/kepsek';
 import { DivSpacer } from '../components/spacer';
+import CardGuru from '../components/cardGuru';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <ToggleTheme />
       
       <Kepsek />
+      <CardGuru />
     </div>
   );
 }
