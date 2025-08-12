@@ -66,7 +66,7 @@ export default function GuruSlider() {
           <div className="space-y-6">
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-semibold text-white leading-tight">
-                Temukan <span className="text-blue-400 italic" style={{ fontFamily: "'Instrument Serif', serif" }}>Guru Terbaik</span> untuk Kesuksesan Anda
+                Guru <span className="text-blue-400 italic" style={{ fontFamily: "'Instrument Serif', serif" }}>Terbaik</span> di Sekolah kami
               </h2>
               <p className="text-slate-300 text-lg leading-relaxed">
                 Bergabunglah dengan ribuan siswa yang telah merasakan pengalaman belajar luar biasa
