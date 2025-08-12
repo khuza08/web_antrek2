@@ -4,7 +4,7 @@ export default function Kepsek() {
   return (
     <section className="min-h-screen flex flex-col md:flex-row bg-blue-100 dark:bg-gray-800">
       {/* kolom kiri */}
-      <div className="w-full md:w-1/2 h-64 md:h-screen">
+      <div className="w-full md:w-1/2 h-[80vh]">
         <img
           src={kepsekImage}
           alt="Kepala Sekolah"
@@ -35,7 +35,7 @@ export default function Kepsek() {
         </p>
 
         <button className="bg-blue-500 border border-blue-500 rounded-full px-6 py-2 hover:bg-blue-600 hover:border-blue-600 hover:text-white transition">
-          <p className="text-gray-100 dark:text-gray-100 text-base md:text-lg">
+          <p className="text-gray-100 dark:text-gray-100 text-base md:text-lg font-semibold">
             Learn More
           </p>
         </button>
