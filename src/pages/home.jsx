@@ -8,7 +8,7 @@ import CardGuru from '../components/cardGuru';
 import Jurusan from '../components/jurusan';
 import GalleryGrid from '../components/galleryGrid';
 import News from '../components/news';
-import Alumni from '../components/alumni';
+import Alumni from '../components/Alumni';
 import Sekitar from '../components/sekitar';
 import Faq from '../components/faq'
 import Contact from '../components/contactForm'
