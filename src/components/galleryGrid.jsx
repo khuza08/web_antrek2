@@ -8,7 +8,7 @@ export default function GalleryGrid() {
   });
 
   return (
-    <section className="relative p-24">
+    <section className="relative p-6 sm:p-12 lg:p-24">
       {/* dim */}
       <div
         className="absolute inset-0 bg-cover bg-center brightness-50"
@@ -18,7 +18,7 @@ export default function GalleryGrid() {
       {/* konten */}
       <div className="relative">
         {/* grid gambar */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
           {images.map((src, i) => (
             <img
               key={i}
@@ -31,12 +31,11 @@ export default function GalleryGrid() {
         </div>
 
         {/* tombol view more */}
-        <div className="absolute left-1/2 -translate-x-1/2">
-          <button className="py-4 px-6 bg-blue-500 text-white font-semibold rounded-full hover:bg-white/30 transition">
+        <div className="flex justify-center">
+          <button className="py-3 px-6 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition">
             View More
           </button>
         </div>
-
       </div>
     </section>
   );
