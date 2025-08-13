@@ -32,3 +32,16 @@ html {
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
 }
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -16px; /* gutter offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 16px; /* gutter */
+  background-clip: padding-box;
+}
+.my-masonry-grid_column > img {
+  margin-bottom: 16px; /* vertical gutter */
+}
