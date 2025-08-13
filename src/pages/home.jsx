@@ -5,22 +5,26 @@ import ToggleTheme from '../components/toggleTheme';
 import Kepsek from '../components/kepsek';
 import { DivSpacer } from '../components/spacer';
 import CardGuru from '../components/cardGuru';
+import Jurusan from '../components/jurusan';
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      
+
       <Slogan />
       <DivSpacer />
-      
+
       <Prestasi />
       <DivSpacer />
-      
+
       <ToggleTheme />
-      
+
       <Kepsek />
       <CardGuru />
+      <DivSpacer />
+      
+      <Jurusan />
     </div>
   );
 }
