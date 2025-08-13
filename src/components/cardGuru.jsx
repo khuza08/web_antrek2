@@ -12,7 +12,7 @@ function CardGuru({ guru }) {
       style={{ backgroundImage: `url(${guru.photo})` }}
     >
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/60 group-hover:via-black/20 transition-all duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent group-hover:from-black/60 group-hover:via-black/20 transition-all duration-300"></div>
 
       {/* Content */}
       <div className="relative z-10 p-6 flex flex-col justify-end h-full">
@@ -34,7 +34,7 @@ export default function GuruSlider() {
       id: 2,
       nama: "Jendral Huza",
       jabatan: "Guru Jumpshot Perang Dunia II",
-      photo: "https://cdn5.telesco.pe/file/KtptrPSlh8zqk5VJhLldi2w9EILkZrwaGq0J9MIDbWLq0PoiZIRWHTKehNe7MwqwyzHB8Hj7vurFMNHDbHB_Tbq0t-JABIjSIp2zxC73rmuciGpR8WUeHIUUALrgRlkLWPqinDH36mU4fcGohQnxctdsTNnNC8IKNkUDGcQxi2_M1ejF6p-Nf31RhPqiECYfkCSiQZhI4Kk-BDoFPXVoFoUaFrEqux1IXzbCz3xAyRuXjCqhh7_Jfj9PC1kvTF-HjNqyaMGHQuyjYOcqCmpUR_v-bgdqjDchEe8niPB2He1Jufkoa2ogxMSfR7o854CQXBQMUawxu0BORZDRIk6pLw.jpg",
+      photo: "https://cdn5.telesco.pe/file/jlTlu9415OsKqtyLsS9tgVcl08c3jCWiLRit4tQq_Wm53aRiYydqF97ukTzDNxKgVNeFiEBwnVHv26beTvrazTP_2h3nabndsFqV24kuBaT9xd5-nVdWg59m2VGJ-AMQQvNwFKQpsTC2EXPWHNIM3GL_7tMrPDOikdLt2h8Pz6rPkUM1_1JDG_13HINQKqmxTR7LF7fhWPaSuHCQ1fj4KW4jp4Q2wLBy5JkI56uGdz-ps03AT0gRU_fjPmTQs7_SJlBo0dITGgQ4Ggh3vJnhyLSJqOm4G81FNIh0mXZx3WUDtvApubMA3q7nc96eI8gPJ_VjdEbLMtmhU3AcN5AfRw.jpg",
       desc: "Pakar strategi militer dengan pengalaman lapangan langsung"
     },
     {
