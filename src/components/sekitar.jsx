@@ -17,7 +17,7 @@ export default function InstagramSection() {
   ];
 
   return (
-    <section className="py-10 bg-slate-900">
+    <section className="p-24 bg-slate-900">
 <div className='text-center py-8'>
           <SectionTitle >
             Around the <span className='italic text-blue-600 dark:text-blue-400' style={{ fontFamily: "'Instrument Serif', serif" }}>

@@ -10,6 +10,8 @@ import GalleryGrid from '../components/galleryGrid';
 import News from '../components/news';
 import Alumni from '../components/alumni';
 import Sekitar from '../components/sekitar';
+import Faq from '../components/faq'
+import Contact from '../components/contactForm'
 
 export default function Home() {
   return (
@@ -35,6 +37,9 @@ export default function Home() {
       <Alumni />
             <DivSpacer />
       <Sekitar />
+      <DivSpacer />
+      <Faq />
+      <Contact />
     </div>
   );
 }
