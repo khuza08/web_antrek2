@@ -1,6 +1,6 @@
 export function DivSpacer({ className = "" }) {
   return (
-    <div className={`bg-blue-100 dark:bg-gray-700 border-t-4 border-black/10 ${className}`} />
+    <div className={`bg-blue-100 dark:bg-gray-700 border-t border-black/5 ${className}`} />
   );
 }
 
