@@ -6,6 +6,7 @@ import Kepsek from '../components/kepsek';
 import { DivSpacer } from '../components/spacer';
 import CardGuru from '../components/cardGuru';
 import Jurusan from '../components/jurusan';
+import GalleryGrid from '../components/galleryGrid';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <DivSpacer />
       
       <Jurusan />
+      <GalleryGrid />
     </div>
   );
 }
