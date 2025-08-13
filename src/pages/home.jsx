@@ -7,7 +7,9 @@ import { DivSpacer } from '../components/spacer';
 import CardGuru from '../components/cardGuru';
 import Jurusan from '../components/jurusan';
 import GalleryGrid from '../components/galleryGrid';
-import News from '../components/news'
+import News from '../components/news';
+import Alumni from '../components/alumni';
+import Sekitar from '../components/sekitar';
 
 export default function Home() {
   return (
@@ -30,7 +32,9 @@ export default function Home() {
       <GalleryGrid />
       <News />
       <DivSpacer />
-      
+      <Alumni />
+            <DivSpacer />
+      <Sekitar />
     </div>
   );
 }
