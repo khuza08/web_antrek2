@@ -1,15 +1,15 @@
 export default function ContactForm() {
   return (
-    <section className="w-full bg-slate-900 py-16">
+    <section className="w-full bg-blue-100 dark:bg-slate-900 py-16">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
+          {/* kiri */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
               Hubungi Kami
             </h2>
             
-            <p className="text-slate-300">
+            <p className="text-gray-700 dark:text-slate-300">
               Kami selalu senang mendengar dari Anda. Tim kami siap membantu menjawab pertanyaan, menerima masukan, atau sekadar berkenalan.
             </p>
             
@@ -23,8 +23,8 @@ export default function ContactForm() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-white">Telepon</h3>
-                  <p className="text-slate-400">+62 123 4567 8910</p>
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-white">Telepon</h3>
+                  <p className="text-gray-600 dark:text-slate-400">+62 123 4567 8910</p>
                 </div>
               </div>
               
@@ -37,8 +37,8 @@ export default function ContactForm() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-white">Email</h3>
-                  <p className="text-slate-400">info@sekolahkita.id</p>
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-white">Email</h3>
+                  <p className="text-gray-600 dark:text-slate-400">info@sekolahkita.id</p>
                 </div>
               </div>
               
@@ -52,40 +52,40 @@ export default function ContactForm() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-white">Lokasi</h3>
-                  <p className="text-slate-400">Jl. Pendidikan No. 123, Jakarta</p>
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-white">Lokasi</h3>
+                  <p className="text-gray-600 dark:text-slate-400">Jl. Pendidikan No. 123, Jakarta</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Form */}
-          <div className="bg-slate-800 rounded-xl p-8 shadow-lg">
-            <h3 className="text-xl font-semibold text-white mb-6">Kirim Pesan</h3>
+          {/* kanan */}
+          <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg border border-gray-200 dark:border-slate-700">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">Kirim Pesan</h3>
             
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
                     Nama Lengkap
                   </label>
                   <input
                     type="text"
                     id="name"
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Masukkan nama Anda"
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
                     Email
                   </label>
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="email@contoh.com"
                     required
                   />
@@ -93,26 +93,26 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
                   Subjek
                 </label>
                 <input
                   type="text"
                   id="subject"
-                  className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Apa yang ingin Anda tanyakan?"
                   required
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
                   Pesan
                 </label>
                 <textarea
                   id="message"
                   rows={5}
-                  className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Tulis pesan Anda disini..."
                   required
                 ></textarea>

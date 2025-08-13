@@ -47,39 +47,56 @@ export default function Alumni() {
   ];
 
   return (
-    <section className="w-full min-h-screen bg-slate-900 py-16 flex items-center justify-center">
-  <div className="max-w-7xl mx-auto px-4 w-full">
-    <div className='text-center py-4'>
-      <SectionTitle>
-        Apa Kata <span className='italic text-blue-600 dark:text-blue-400' style={{ fontFamily: "'Instrument Serif', serif" }}>
-          Alumni?
-        </span>
-      </SectionTitle>
-    </div>
-    <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-      {testimonials.map((alumni, i) => (
-        <div
-          key={i}
-          className="bg-white/5 rounded-xl p-6 shadow hover:shadow-lg transition h-64 w-full flex flex-col"
-        >
-          <div className="flex items-center mb-4">
-            <img
-              src={alumni.img}
-              alt={alumni.name}
-              className="w-16 h-16 rounded-full object-cover mr-4"
-            />
-            <div>
-              <h3 className="text-blue-400 font-semibold text-lg">{alumni.name}</h3>
-              <p className="text-sm text-gray-100">{alumni.role}</p>
-            </div>
-          </div>
-          <p className="text-gray-300 line-clamp-4 flex-grow">
-            {alumni.message}
+    <section className="w-full min-h-screen bg-gradient-to-b from-white to-blue-100 dark:from-slate-900 dark:to-slate-800 py-16">
+      <div className="max-w-7xl mx-auto px-4 w-full">
+        <div className='text-center py-4 mb-12'>
+          <SectionTitle>
+            Apa Kata <span className='italic text-blue-600 dark:text-blue-400' style={{ fontFamily: "'Instrument Serif', serif" }}>
+              Alumni?
+            </span>
+          </SectionTitle>
+          <p className="mt-4 text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+            Testimoni jujur dari alumni kami tentang pengalaman mereka selama bersekolah di sini
           </p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+          {testimonials.map((alumni, i) => (
+            <div
+              key={i}
+              className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-slate-700 flex flex-col h-full"
+            >
+              <div className="flex items-center mb-4">
+                <img
+                  src={alumni.img}
+                  alt={alumni.name}
+                  className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-blue-500 dark:border-blue-400"
+                />
+                <div>
+                  <h3 className="text-blue-600 dark:text-blue-400 font-semibold text-lg">{alumni.name}</h3>
+                  <p className="text-sm text-gray-600 dark:text-slate-300">{alumni.role}</p>
+                </div>
+              </div>
+              <div className="flex-grow">
+                <p className="text-gray-700 dark:text-slate-300 line-clamp-5">
+                  "{alumni.message}"
+                </p>
+              </div>
+              <div className="mt-4 flex justify-end">
+                <svg className="w-8 h-8 text-blue-500 dark:text-blue-400 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 shadow-lg hover:shadow-blue-500/20">
+            Lihat Lebih Banyak Testimoni
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }
