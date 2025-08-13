@@ -7,6 +7,7 @@ import { DivSpacer } from '../components/spacer';
 import CardGuru from '../components/cardGuru';
 import Jurusan from '../components/jurusan';
 import GalleryGrid from '../components/galleryGrid';
+import News from '../components/news'
 
 export default function Home() {
   return (
@@ -27,6 +28,9 @@ export default function Home() {
       
       <Jurusan />
       <GalleryGrid />
+      <News />
+      <DivSpacer />
+      
     </div>
   );
 }
