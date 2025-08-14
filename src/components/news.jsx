@@ -39,7 +39,7 @@ export default function News() {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-blue-100 to-white dark:from-slate-800 dark:to-slate-900 py-16">
+    <section className="w-full bg-gradient-to-b from-white to-blue-100 dark:from-slate-800 dark:to-slate-900 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
@@ -65,7 +65,7 @@ export default function News() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 shadow-lg hover:shadow-blue-500/20">
+          <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition duration-200 shadow-lg hover:shadow-blue-500/20">
             Lihat Semua Berita
           </button>
         </div>

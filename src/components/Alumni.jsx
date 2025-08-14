@@ -47,7 +47,7 @@ export default function Alumni() {
   ];
 
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-white to-blue-100 dark:from-slate-900 dark:to-slate-800 py-16">
+    <section className="w-full min-h-screen bg-blue-100 dark:bg-slate-900 py-16">
       <div className="max-w-7xl mx-auto px-4 w-full">
         <div className='text-center py-4 mb-12'>
           <SectionTitle>
@@ -92,7 +92,7 @@ export default function Alumni() {
         </div>
 
         <div className="text-center mt-16">
-          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 shadow-lg hover:shadow-blue-500/20">
+          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition duration-200 shadow-lg hover:shadow-blue-500/20">
             Lihat Lebih Banyak Testimoni
           </button>
         </div>

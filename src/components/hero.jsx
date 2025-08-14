@@ -2,7 +2,7 @@ import heroImage from '../assets/images/smk.jpg'
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center justify-center bg-blue-100 dark:bg-gray-800 px-4 py-12 sm:py-16 md:p-8 w-full min-h-screen md:h-screen overflow-hidden">
+    <section className="relative flex items-center justify-center bg-white dark:bg-gray-800 px-4 py-12 sm:py-16 md:p-8 w-full min-h-screen md:h-screen overflow-hidden">
       {/* bg Image */}
       <img
         src={heroImage}

@@ -15,7 +15,7 @@ const Jurusan = () => {
   const rightColumn = jurusanList.slice(3);
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-blue-100 dark:from-slate-900 dark:to-gray-800 py-16 px-4 sm:px-6">
+<section className="w-full bg-gradient-to-b from-blue-100 to-white dark:from-slate-900 dark:to-gray-800 py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
@@ -91,7 +91,7 @@ const Jurusan = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 shadow-lg hover:shadow-blue-500/20">
+          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition duration-200 shadow-lg hover:shadow-blue-500/20">
             Lihat Detail Program
           </button>
         </div>

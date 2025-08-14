@@ -2,7 +2,7 @@ import kepsekImage from '../assets/images/kepsek.jpeg';
 
 export default function Kepsek() {
   return (
-    <section className="flex flex-col md:flex-row bg-blue-100 dark:bg-gray-800">
+    <section className="flex flex-col md:flex-row bg-blue-100 dark:bg-slate-900">
       {/* kolom kiri */}
       <div className="w-full md:w-1/2 h-[80vh]">
         <img

@@ -20,16 +20,15 @@ export default function Home() {
 
       <Slogan />
       <DivSpacer />
-
-      <Prestasi />
-      <DivSpacer />
-
-      <ToggleTheme />
-
       <Kepsek />
       <CardGuru />
       <DivSpacer />
-      
+      <ToggleTheme />
+
+      <DivSpacer />
+      <Prestasi />
+            <DivSpacer />
+
       <Jurusan />
       <GalleryGrid />
       <News />

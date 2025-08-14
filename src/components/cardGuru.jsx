@@ -68,7 +68,7 @@ export default function GuruSlider() {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-blue-50 to-white dark:from-gray-800 dark:to-slate-900 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="w-full bg-blue-100 dark:bg-slate-900 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="flex flex-col lg:flex-row gap-12 items-center px-24">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Left Column - Text Content */}
@@ -100,7 +100,7 @@ export default function GuruSlider() {
             </div>
 
             <div className="pt-2">
-              <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 shadow-lg hover:shadow-blue-500/20">
+              <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition duration-200 shadow-lg hover:shadow-blue-500/20">
                 Mulai Belajar Sekarang
               </button>
             </div>

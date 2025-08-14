@@ -3,7 +3,7 @@ import { FaGraduationCap, FaBookOpen, FaUsers } from 'react-icons/fa';
 
 export default function SloganSekolah() {
   return (
-    <section className="min-h-screen flex justify-center items-center py-16 bg-blue-100 dark:bg-gray-800">
+    <section className="min-h-screen flex justify-center items-center py-16 bg-gradient-to-b from-white to-blue-100 dark:from-gray-800 dark:to-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
