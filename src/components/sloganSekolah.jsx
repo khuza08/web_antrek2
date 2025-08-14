@@ -77,7 +77,7 @@ export default function SloganSekolah() {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <button className="px-8 py-3 bg-blue-600 dark:bg-blue-500 text-white font-medium rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors shadow-lg hover:shadow-xl">
+          <button className="px-8 py-3 bg-blue-600 dark:bg-blue-500 text-white font-medium rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition shadow-lg hover:shadow-blue-500/20">
             Daftar Sekarang
           </button>
         </div>

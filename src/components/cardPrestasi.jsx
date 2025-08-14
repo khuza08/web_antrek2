@@ -136,7 +136,7 @@ export default function CardPrestasi() {
       <div className="text-center mt-8">
         <Link
           to="/prestasi"
-          className="bg-blue-600 dark:bg-blue-500 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white hover:bg-blue-600 hover:-translate-y-0.5 transition duration-300"
+          className="bg-blue-600 dark:bg-blue-500 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-full text-white hover:bg-blue-700 dark:hover:bg-blue-600 transition shadow-lg hover:shadow-blue-500/20"
         >
           Lihat Semua Prestasi
           <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
