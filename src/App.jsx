@@ -11,6 +11,7 @@ import News from './pages/news'
 import Ppdb from './pages/ppdb'
 import NotFound from './pages/404'
 import Login from './pages/login'
+import Regis from './pages/register'
 import "../src/styles/index.css"
 
 export default function App() {
@@ -28,7 +29,7 @@ export default function App() {
           <Route path="/ppdb" element={<Ppdb />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/login" element={<Login />} />
-
+          <Route path="/register" element={<Regis/>} />
         </Routes>
       </Layout>
     </Router>
