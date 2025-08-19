@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from "react";
+import { Link } from "react-router-dom";
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState<string>("");
@@ -22,7 +23,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center bg-gradient-to-b from-blue-100 to-white dark:from-slate-900 dark:to-gray-800 p-6">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-blue-100 to-white dark:from-slate-900 dark:to-gray-800 p-6">
       <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg border border-gray-200 dark:border-slate-700 max-w-md w-full">
         <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-6 text-center">
           Login
@@ -76,6 +77,19 @@ const Login: React.FC = () => {
             Login
           </button>
         </form>
+      </div>
+
+      {/* regis */}
+      <div className="mt-4 text-center">
+        <span className="text-gray-700 dark:text-gray-300">
+          Belum punya akun?{" "}
+          <Link
+            to="/register"
+            className="text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400 font-semibold"
+          >
+            Daftar di sini
+          </Link>
+        </span>
       </div>
     </div>
   );
