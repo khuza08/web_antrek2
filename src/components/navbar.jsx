@@ -83,12 +83,6 @@ export default function Header() {
               Hubungi
             </Link>
 
-            <Link
-              to="/login"
-              className="flex items-center px-2 py-2 border border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 font-medium rounded-full hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition"
-            >
-              <FaUser className="w-5 h-full" />
-            </Link>
           </nav>
         </div>
 
@@ -122,15 +116,6 @@ export default function Header() {
               Hubungi
             </Link>
 
-            {/* Tombol Login di mobile */}
-            <Link
-              to="/login"
-              className="flex items-center justify-center space-x-2 px-4 py-2 border border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 font-medium rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition mt-2"
-              onClick={() => setMenuOpen(false)}
-            >
-              <FaUser className="w-5 h-5" />
-              <span>Login</span>
-            </Link>
           </div>
         </div>
       </header>
