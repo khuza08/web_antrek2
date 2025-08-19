@@ -32,10 +32,11 @@ export default function Header() {
       )}
 
       <header
-        className={`fixed top-0 left-0 right-0 border-b border-blue-200 dark:border-white/25 text-gray-900 dark:text-white z-50 transition-colors duration-300 ${scrolled
+        className={`fixed top-0 left-0 right-0 border-b border-blue-200 dark:border-white/25 text-gray-900 dark:text-white z-50 transition-colors duration-300 ${
+          scrolled
             ? 'bg-gradient-to-r from-blue-50/70 to-indigo-50/70 dark:from-gray-900/70 dark:to-gray-800/70 backdrop-blur-lg'
             : 'bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800'
-          }`}
+        }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
           {/* Logo */}
@@ -86,7 +87,7 @@ export default function Header() {
               to="/login"
               className="flex items-center px-2 py-2 border border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 font-medium rounded-full hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition"
             >
-              <FaUser className='w-5 h-full'/>
+              <FaUser className="w-5 h-full" />
             </Link>
           </nav>
         </div>
