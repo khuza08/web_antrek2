@@ -3,6 +3,9 @@ export default function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
+
+      <script async id="vectorshift-chat-widget" src="https://app.vectorshift.ai/chatWidget.js" chatbot-id="68a2bb2c43e5f81a98ff78f7" chatbot-height="600px" chatbot-width="400px" />
+
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           
