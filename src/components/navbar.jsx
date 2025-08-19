@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
     return () => { document.body.style.overflow = 'auto'; };
@@ -16,10 +18,8 @@ export default function Header() {
 
     window.addEventListener('scroll', handleScroll);
 
-    // cleanup listener saat unmount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
 
   return (
     <>
@@ -36,7 +36,8 @@ export default function Header() {
             ? 'bg-gradient-to-r from-blue-50/70 to-indigo-50/70 dark:from-gray-900/70 dark:to-gray-800/70 backdrop-blur-lg'
             : 'bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800'
           }`}
-      >        <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
           {/* Logo */}
           <Link
             to="/"
@@ -81,6 +82,12 @@ export default function Header() {
               Hubungi
             </Link>
 
+            <Link
+              to="/login"
+              className="flex items-center px-2 py-2 border border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 font-medium rounded-full hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition"
+            >
+              <FaUser className='w-5 h-full'/>
+            </Link>
           </nav>
         </div>
 
@@ -114,6 +121,15 @@ export default function Header() {
               Hubungi
             </Link>
 
+            {/* Tombol Login di mobile */}
+            <Link
+              to="/login"
+              className="flex items-center justify-center space-x-2 px-4 py-2 border border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 font-medium rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition mt-2"
+              onClick={() => setMenuOpen(false)}
+            >
+              <FaUser className="w-5 h-5" />
+              <span>Login</span>
+            </Link>
           </div>
         </div>
       </header>
