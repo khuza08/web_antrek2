@@ -4,13 +4,13 @@ export default function Kepsek() {
   return (
     <section className="flex flex-col md:flex-row bg-blue-100 dark:bg-slate-900 px-6 md:px-12 gap-y-6 md:gap-x-8">
   {/* kolom kiri */}
-  <div className="w-full md:w-1/2 h-[80vh]">
-    <img
-      src={kepsekImage}
-      alt="Kepala Sekolah"
-      className="w-full h-full object-cover md:rounded-4xl"
-    />
-  </div>
+<div className="w-full md:w-1/2 h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
+  <img
+    src={kepsekImage}
+    alt="Kepala Sekolah"
+    className="w-full h-full rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-4xl object-cover"
+  />
+</div>
 
   {/* kolom kanan */}
   <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-8 text-center md:text-left">
