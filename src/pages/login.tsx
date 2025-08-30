@@ -2,14 +2,43 @@ import React, { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
 
 const Login: React.FC = () => {
-  const [username, setUsername] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("")
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!username.trim()) {
+    try{
+      const response = await fetch("http://localhost:8000/api/login", {
+        method : "POST",
+        credentials: "include",
+        mode : "cors",
+        headers : {
+          Accept : "application/json",
+          "Content-Type" : "application/json",
+        },
+        body : JSON.stringify({
+          email : email,
+          password : password,
+        })
+      })
+
+      if (response.ok){
+        const data = await response.json()
+        console.log(data)
+        window.location.href = "http://localhost:8000"
+      } else {
+        const data = await response.json()
+        setErrorMessage(data.message || "Unathorized User!")
+      }
+    } catch (err) {
+      console.log("ERROR failed to fetch", err)
+      setErrorMessage("Unathorized User!")
+    }
+
+    if (!email.trim()) {
       setError("Username harus diisi");
       return;
     }
@@ -18,8 +47,8 @@ const Login: React.FC = () => {
       return;
     }
 
-    setError("");
-    alert(`Login dengan\nUsername: ${username}\nPassword: ${password}`);
+    // setError("");
+    // alert(`Login dengan\nUsername: ${username}\nPassword: ${password}`);
   };
 
   return (
@@ -36,17 +65,18 @@ const Login: React.FC = () => {
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label
-              htmlFor="username"
+              htmlFor="email"
               className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2"
             >
-              Username
+              Email
             </label>
             <input
-              id="username"
+              id="email"
               type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Masukkan username"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Masukkan email"
               className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             />
@@ -62,6 +92,7 @@ const Login: React.FC = () => {
             <input
               id="password"
               type="password"
+              name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Masukkan password"
@@ -69,6 +100,8 @@ const Login: React.FC = () => {
               required
             />
           </div>
+
+          <p className="text-red-500">{errorMessage}</p>
 
           <button
             type="submit"
