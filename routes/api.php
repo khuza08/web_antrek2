@@ -8,6 +8,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\AchievementController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::apiResource('news', NewsController::class);
+Route::apiResource('galleries', GalleryController::class);
 Route::apiResource('/achievements', AchievementController::class);
 Route::apiResource('/teachers', TeacherController::class);
 Route::apiResource('/majors', MajorController::class);

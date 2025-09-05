@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
-class CategoryController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::all();
-        return response()->json($categories);
+        $galleries = Gallery::with(['user', 'category'])->get();
+        return response()->json($galleries);
     }
 
     /**
@@ -23,19 +22,24 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255|unique:categories,name',
-            'description' => 'nullable|string'
+            'user_id' => 'required|exists:users,id',
+            'category_id' => 'required|exists:categories,id',
+            'title' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        $category = Category::create([
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'description' => $request->description
+        $imagePath = $request->file('image')->store('galleries', 'public');
+
+        $gallery = Gallery::create([
+            'user_id' => $request->user_id,
+            'category_id' => $request->category_id,
+            'title' => $request->title,
+            'image' => $imagePath
         ]);
 
         return response()->json([
-            'message' => 'Category created successfully',
-            'data' => $category
+            'message' => 'Gallery created successfully',
+            'data' => $gallery
         ], 201);
     }
 
@@ -44,8 +48,8 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        $category = Category::findOrFail($id);
-        return response()->json($category);
+        $gallery = Gallery::with(['user', 'category'])->findOrFail($id);
+        return response()->json($gallery);
     }
 
     /**
@@ -53,22 +57,30 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $category = Category::findOrFail($id);
+        $gallery = Gallery::findOrFail($id);
 
         $request->validate([
-            'name' => 'required|string|max:255|unique:categories,name,' . $id,
-            'description' => 'nullable|string'
+            'user_id' => 'sometimes|required|exists:users,id',
+            'category_id' => 'sometimes|required|exists:categories,id',
+            'title' => 'sometimes|required|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        $category->update([
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'description' => $request->description
+        $imagePath = $gallery->image;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('galleries', 'public');
+        }
+
+        $gallery->update([
+            'user_id' => $request->user_id ?? $gallery->user_id,
+            'category_id' => $request->category_id ?? $gallery->category_id,
+            'title' => $request->title ?? $gallery->title,
+            'image' => $imagePath
         ]);
 
         return response()->json([
-            'message' => 'Category updated successfully',
-            'data' => $category
+            'message' => 'Gallery updated successfully',
+            'data' => $gallery
         ]);
     }
 
@@ -77,11 +89,11 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        $category = Category::findOrFail($id);
-        $category->delete();
+        $gallery = Gallery::findOrFail($id);
+        $gallery->delete();
 
         return response()->json([
-            'message' => 'Category deleted successfully'
+            'message' => 'Gallery deleted successfully'
         ]);
     }
 }
